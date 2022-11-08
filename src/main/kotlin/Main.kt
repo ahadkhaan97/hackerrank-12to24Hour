@@ -6,10 +6,10 @@ fun timeConversion(s: String): String {
     var time = ""
     val temp = s.split(":")
     if (s.contains("AM")) {
-        if (temp[0].toInt() == 12) {
-            time += "00"
+        time += if (temp[0].toInt() == 12) {
+            "00"
         } else {
-            time += temp[0]
+            temp[0]
         }
     } else {
         if (temp[0].toInt() == 12) {
